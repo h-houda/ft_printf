@@ -39,8 +39,13 @@ int	print_address(void *ptr)
 	unsigned long long	address;
 
 	address = (unsigned long long)ptr;
-	i = print_str("0x");
-	convert_print_hexa(address);
+	if (!ptr)
+		i = (print_str("(nil)")) - 1;
+	else
+	{
+		i = print_str("0x");
+		convert_print_hexa(address);
+	}
 	return(get_size_hexa(address) + i);
 }
 
