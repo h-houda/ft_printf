@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hhouda <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/05 17:17:45 by hhouda            #+#    #+#             */
+/*   Updated: 2022/05/05 18:16:03 by hhouda           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	ft_putchar(char c)
@@ -10,7 +22,6 @@ void	ft_putnbr(long int nb)
 {
 	if (nb < 0)
 	{
-
 		ft_putchar('-');
 		nb = -nb;
 	}
@@ -32,7 +43,7 @@ int	get_size_decimal(long int nb)
 		return (1);
 	if (nb < 0)
 	{
-		nb = nb * -1;
+		nb = -nb;
 		size++;
 	}
 	while (nb)
@@ -45,7 +56,7 @@ int	get_size_decimal(long int nb)
 
 int	get_size_hexa(unsigned long long nb)
 {
-	unsigned long long size;
+	unsigned long long	size;
 
 	size = 0;
 	if (nb == 0)
@@ -57,5 +68,3 @@ int	get_size_hexa(unsigned long long nb)
 	}
 	return (size);
 }
-
-

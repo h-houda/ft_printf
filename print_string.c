@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print_string.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hhouda <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/05 17:07:46 by hhouda            #+#    #+#             */
+/*   Updated: 2022/05/05 18:10:12 by hhouda           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 /* %c */
@@ -17,9 +29,8 @@ int	print_str(char *str)
 		str = "(null)";
 	while (str[i])
 		i = i + ft_putchar(str[i]);
-	return(i);
+	return (i);
 }
-
 
 /* %p */
 static void	convert_print_hexa(unsigned long long nb)
@@ -35,7 +46,7 @@ static void	convert_print_hexa(unsigned long long nb)
 
 int	print_address(void *ptr)
 {
-	int	i;
+	int					i;
 	unsigned long long	address;
 
 	address = (unsigned long long)ptr;
@@ -46,6 +57,5 @@ int	print_address(void *ptr)
 		i = print_str("0x");
 		convert_print_hexa(address);
 	}
-	return(get_size_hexa(address) + i);
+	return (get_size_hexa(address) + i);
 }
-
