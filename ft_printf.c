@@ -6,7 +6,7 @@
 /*   By: hhouda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 17:18:32 by hhouda            #+#    #+#             */
-/*   Updated: 2022/05/05 17:24:38 by hhouda           ###   ########.fr       */
+/*   Updated: 2022/05/05 20:02:16 by hhouda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	ft_printf(const char *format, ...)
 	res = 0;
 	while (format[i])
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i + 1])
 		{
 			i++;
 			res = res + convert_format(format[i], args);
